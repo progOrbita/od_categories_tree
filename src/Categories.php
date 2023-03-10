@@ -14,4 +14,13 @@ class Categories
         $this->getCategories();
     }
 
+    /**
+     * look for root category of our db
+     */
+
+    private function lookRootCat()
+    {
+        $this->id_root = (int) Db::getInstance()->getValue("SELECT id_category FROM ps_category WHERE is_root_category=1");
+    }
+
 }
