@@ -20,3 +20,15 @@ $(document).on('change', '.input', function () {
     generateAssociated($(this).attr('name'), $(this).val());
 });
 
+/**
+ * function to generte associated categories box
+ * 
+ * @param string name 
+ * @param int id 
+ */
+
+function generateAssociated(name, id) {
+    let box = '<span class="associated ' + id + '"><span>' + name + '</span><a class="closer" name=' + id + '>x</a></span>';
+    $('.associated-cat').append(box);
+}
+
