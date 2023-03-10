@@ -39,4 +39,28 @@ class Categories
         }
     }
 
+    /**
+     * get the bread crumbs of a category
+     * 
+     * @param int $id_category
+     * @param array $data
+     * 
+     * @return string
+     */
+
+    public function getBreadcrumbs(int $id_category, array $data = []): string
+    {
+        if (!isset($this->categories[$id_category])) {
+            return implode('->', array_reverse($data));
+        }
+
+        $data[] = $this->categories[$id_category]['name'];
+
+        if ($id_category != $this->id_root) {
+            return $this->getBreadcrumbs($this->categories[$id_category]['id_parent'], $data);
+        }
+
+        return implode('->', array_reverse($data));
+    }
+
 }
