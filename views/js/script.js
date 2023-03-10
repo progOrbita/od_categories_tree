@@ -32,3 +32,8 @@ function generateAssociated(name, id) {
     $('.associated-cat').append(box);
 }
 
+$(document).on('click', '.closer', function () {
+    $(this).parent().remove();
+    $('input[value=' + $(this).attr('name') + ']').prop('checked', false);
+});
+
