@@ -1,0 +1,53 @@
+ul {
+    list-style-type: none;
+    vertical-align: baseline;
+}
+
+.colapsed {
+    display: none;
+}
+
+.more {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.associated {
+    font-size: 12px;
+    font-size: .75rem;
+    display: inline-block;
+    padding: 3.2px 6.4px;
+    padding: 0.2rem 0.4rem;
+    margin: 0 6.4px 6.4px 0;
+    margin: 0 0.4rem 0.4rem 0;
+    margin-top: 2px;
+    margin-left: 2px;
+    color: #25b9d7;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    color: #fff;
+    background-color: #25b9d7;
+}
+
+.form-group {
+    margin: auto;
+    width: 300px;
+}
+
+.closer {
+    margin: 0 0 0 0.4rem;
+    color: #363a41;
+    text-decoration: none;
+}
+
+.radio {
+    vertical-align: middle;
+}
+
+label {
+    width: 80%;
+}
