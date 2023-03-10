@@ -37,3 +37,22 @@ $(document).on('click', '.closer', function () {
     $('input[value=' + $(this).attr('name') + ']').prop('checked', false);
 });
 
+/**
+ * function to open or close ul of the tree
+ * 
+ * @param int num 
+ */
+
+function openClose(num) {
+    $('#' + num).find('i:first').removeClass('fa-angle-down');
+    if (!$('#' + num).find('ul:first').hasClass('show')) {
+        $('#' + num).find('ul:first').addClass('show');
+        $('#' + num).find('i:first').removeClass('fa-angle-right');
+        $('#' + num).find('i:first').addClass('fa-angle-down');
+        return;
+    }
+
+    $('#' + num).find('ul:first').removeClass('show');
+    $('#' + num).find('i:first').addClass('fa-angle-right');
+}
+
