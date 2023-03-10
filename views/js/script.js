@@ -56,3 +56,12 @@ function openClose(num) {
     $('#' + num).find('i:first').addClass('fa-angle-right');
 }
 
+$(document).on('click', '.radio', function () {
+    $(".radio").each(function () {
+        if ($(this).is(':checked')) {
+            $(this).prop('checked', false)
+        }
+    });
+
+    $(this).prop('checked', true);
+});
