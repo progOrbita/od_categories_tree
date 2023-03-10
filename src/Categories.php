@@ -63,4 +63,31 @@ class Categories
         return implode('->', array_reverse($data));
     }
 
+    /**
+     * get the info saved on array to make tree
+     * 
+     * @param int $id_cat
+     * @param array $data
+     * 
+     * @return array
+     */
+
+    public function getInfoTree(int $id_cat, array $data = []): array
+    {
+        if (!isset($this->categories[$id_cat])) {
+            return $data;
+        }
+
+        $data[$id_cat]['name'] = $this->categories[$id_cat]['name'];
+        if (!isset($this->parentChildren[$id_cat])) {
+            return $data;
+        }
+
+        foreach ($this->parentChildren[$id_cat] as $child) {
+            $arr = $this->getInfoTree($child, $data[$id_cat]['children'][$child] = []);
+            $data[$id_cat]['children'][$child] = $arr[$child];
+        }
+
+        return $data;
+    }
 }
